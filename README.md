@@ -152,3 +152,11 @@ Password (again):
 > Naming your URL lets you refer to it unambiguously from elsewhere in Django, especially from within templates.
 > 
 </details>
+
+
+## ```render()```
+> It’s a very common idiom to load a template, fill a context and return an **HttpResponse** object with the result of the rendered template.
+
+
+## ```get_object_or_404()```
+> It’s a very common idiom to use **get()** and raise **Http404** if the object doesn’t exist.
