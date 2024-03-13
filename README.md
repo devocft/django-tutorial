@@ -28,7 +28,35 @@ pip install -r requirements.txt
 
 # Django
 
+## Setting
+
+### Database
+```python
+# mysite/settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
+### Activate models
+```python
+# mysite/settings.py
+INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
+
 ## Command
+
 
 ### Create a project
 ```shell
@@ -39,6 +67,7 @@ django-admin startproject project
 django-admin startproject project .
 ```
 
+
 ### Run server
 ```shell
 # default port : 8000
@@ -48,9 +77,57 @@ python manage.py runserver
 python manage.py runserver 8080
 ```
 
+
 ### Create a app
 ```shell
 python manage.py startapp app
+```
+
+
+### Migrate
+> need to create the tables in the database
+```shell
+python manage.py migrate
+```
+
+
+### Migration for app
+```shell
+python manage.py makemigrations polls
+```
+
+
+### SQL migrate
+```shell
+python manage.py sqlmigrate polls 0001
+```
+
+
+### Migrate
+> create those model tables in your database
+```shell
+python manage.py migrate
+```
+
+### Step for Model Change
+* Change your models(in **models.py**)<br/>
+* Run ```python manage.py makemigrations``` to create migrations for those changes<br/>
+* Run ```python manage.py migrate``` to apply those changes to the database
+
+
+### Playing with the API
+```shell
+python manage.py shell
+```
+
+### Creating an admin user
+```shell
+$ python manage.py createsuperuser
+
+Username : admin
+Email address: admin@example.com
+Password: 
+Password (again):
 ```
 
 <br/>
