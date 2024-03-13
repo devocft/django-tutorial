@@ -41,3 +41,8 @@ python manage.py runserver
 # changing the port : 8080
 python manage.py runserver 8080
 ```
+
+### Create a app
+```shell
+python manage.py startapp app
+```
