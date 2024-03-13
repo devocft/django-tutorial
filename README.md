@@ -1,4 +1,6 @@
 # django-tutorial
+https://docs.djangoproject.com/en/4.2/contents/
+
 
 ## Default
 
@@ -22,7 +24,6 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
-<br/>
 <br/>
 <br/>
 
@@ -132,7 +133,6 @@ Password (again):
 
 <br/>
 <br/>
-<br/>
 
 # Django function
 
@@ -160,3 +160,22 @@ Password (again):
 
 ## ```get_object_or_404()```
 > It’s a very common idiom to use **get()** and raise **Http404** if the object doesn’t exist.
+
+
+<br>
+<br>
+
+
+# Django guide
+
+## Templates
+
+### Remove hardcoded URLs
+```html
+<!-- polls/index.html -->
+<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+```
+> you can remove a reliance on specific URL paths defined in your url configurations by using the **{% url %}** template tag
+```html
+<li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+```
