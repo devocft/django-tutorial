@@ -131,6 +131,11 @@ Password:
 Password (again):
 ```
 
+### Running test
+```shell
+python manage.py test app
+```
+
 <br/>
 <br/>
 
